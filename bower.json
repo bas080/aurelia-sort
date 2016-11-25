@@ -1,0 +1,25 @@
+{
+  "name": "aurelia-sort",
+  "version": "0.1.0",
+  "description": "Skeleton plugin following spoonx conventions.",
+  "keywords": [
+    "aurelia",
+    "spoonx",
+    "sort"
+  ],
+  "homepage": "https://github.com/SpoonX/aurelia-sort",
+  "main": "dist/commonjs/aurelia-sort.js",
+  "moduleType": "node",
+  "license": "MIT",
+  "author": "SpoonX <info@spoonx.nl>",
+  "contributors": [
+    "doktordirk <doktordirk@outlook.de> (http://spoonx.nl)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SpoonX/aurelia-sort"
+  },
+  "dependencies": {
+    "aurelia-dependency-injection": "^1.0.0"
+  }
+}
