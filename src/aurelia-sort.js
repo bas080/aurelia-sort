@@ -1,4 +1,4 @@
-import {SortValueConverter} from './sort';
+export {SortValueConverter} from './sort';
 import {Config}             from './config';
 
 export function configure(aurelia, configCallback) {
@@ -9,3 +9,5 @@ export function configure(aurelia, configCallback) {
     configCallback(config);
   }
 }
+
+export {Config};
