@@ -9,13 +9,15 @@ export class SortValueConverter {
   }
 
   /**
-   * @param {array} unsorted - an array that is to be sorted
+   * @param {*[]} array - an array that is to be sorted
    * @param {object} options - which alters the behavior of sort
    * @param {boolean} [options.ignoreCase=true] - to sort case insensitively
    * @param {string} [options.property] - name of the property to sort
    * @param {string} [options.method='alphanumeric'] - the method to sort with
+   *
+   * @returns {*[]} which is sorted according to the options provided
    */
-  toView(array, options) {
+  toView(array, options = {}) {
     let value;
 
     options = Object.assign(this.config.defaults, options);
@@ -26,6 +28,8 @@ export class SortValueConverter {
   }
 
   valueFn(options) {
+    let value;
+
     if (options.value) {
       return options.value;
     }
@@ -39,8 +43,14 @@ export class SortValueConverter {
     if (options.ignoreCase === true) {
       let oldValue = value;
 
-      value = v => oldValue(v).toLowerCase();
+      value = v => {
+        let d = oldValue(v);
+
+        return d.toLowerCase ? d.toLowerCase() : d;
+      };
     }
+
+    return value;
   }
 
 }
